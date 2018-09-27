@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <dashboard-card :title="'Device Temperature'"></dashboard-card>
+    <dashboard-card :title="'Device Temperature'">
+      <component :is="temp_chart"></component>
+    </dashboard-card>
     
     
   </div>
@@ -8,10 +10,17 @@
 
 <script>
 import DashboardCard from '../components/DashboardCard.vue';
+import TempChart from '../components/Charts/TempLineChart.vue';
 export default {  
   name: 'home',
   components: {
-    DashboardCard
+    DashboardCard,
+    TempChart
+  },
+  data() {
+    return { 
+      temp_chart: 'temp-chart'
+      };
   }
 }
 </script>
