@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import './src/assets/css/font.css';
-@import './src/assets/css/main.css';
+@import './assets/css/font.css';
+@import './assets/css/main.css';
 
 #app {
   font-family: 'SF Text', Helvetica, Arial, sans-serif;
