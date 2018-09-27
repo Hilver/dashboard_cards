@@ -2,7 +2,7 @@
     <div class="card">
         <h3 class="card__title">{{title}}</h3>
         <div class="divider"></div>
-        <refresh-button></refresh-button>
+        <refresh-button :position="'dashboard-card__button--position'"></refresh-button>
     </div>
 </template>
 
@@ -27,6 +27,7 @@ import RefreshButton from './Buttons/RefreshButton.vue';
     border-radius: 10px;
     width: 420px;
     height: 347px;
+    position: relative;
 }
 
 .card__title {
