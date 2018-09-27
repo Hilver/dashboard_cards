@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <h3 class="card__title">{{title}}</h3>
-
+        <div class="divider"></div>
     </div>
 </template>
 
