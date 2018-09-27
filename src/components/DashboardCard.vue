@@ -3,6 +3,7 @@
         <h3 class="card__title">{{title}}</h3>
         <div class="divider"></div>
         <refresh-button :position="'dashboard-card__button--position'"></refresh-button>
+        <slot></slot>
     </div>
 </template>
 
@@ -10,10 +11,10 @@
 import RefreshButton from './Buttons/RefreshButton.vue';
     export default {
         components: {
-            RefreshButton
+            RefreshButton            
         },
          props: {
-             title: String
+             title: String                
          }
         
     }
