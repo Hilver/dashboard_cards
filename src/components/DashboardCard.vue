@@ -2,12 +2,19 @@
     <div class="card">
         <h3 class="card__title">{{title}}</h3>
         <div class="divider"></div>
+        <refresh-button></refresh-button>
     </div>
 </template>
 
 <script>
+import RefreshButton from './Buttons/RefreshButton.vue';
     export default {
-         props: ['title']
+        components: {
+            RefreshButton
+        },
+         props: {
+             title: String
+         }
         
     }
 </script>
