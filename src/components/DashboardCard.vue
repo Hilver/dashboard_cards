@@ -16,8 +16,7 @@ import RefreshButton from './Buttons/RefreshButton.vue';
          props: {
              title: String,
              onClick: Function,
-         }
-        
+         }        
     }
 </script>
 
@@ -29,6 +28,7 @@ import RefreshButton from './Buttons/RefreshButton.vue';
     border-radius: 10px;
     width: 420px;
     height: 347px;
+    margin: 10px;
     position: relative;
 }
 
