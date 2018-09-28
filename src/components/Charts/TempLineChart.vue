@@ -1,6 +1,6 @@
 <template>
     <div>
-    <line-chart :data="tempData" :colors="['#4CA368']" :discrete="true" :curve="false" :library="{backgroundColor: '#000'}">></line-chart>
+    <line-chart :data="tempData" :colors="['#4CA368']" :discrete="true" :curve="false"></line-chart>
     </div>
 </template>
 
