@@ -32,7 +32,7 @@ export default new Vuex.Store({
         date: '23 January 2018,  18:20',
         message: 'You subscription has expired…',
         button_content: 'TEST3',
-        button_icon: './img/arrow-blue.600531f0.svg',
+        button_icon: './img/arrow-blue.1da589df.svg',
         color: 'blue'
       }
     ],
