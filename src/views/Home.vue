@@ -3,7 +3,7 @@
     <dashboard-card :title="'Device Temperature'" :onClick="setFilterTemp">
       <component :is="temp_chart"></component>
     </dashboard-card>
-    <dashboard-card :title="'Notifications'" :onClick="setFilterTemp">
+    <dashboard-card :title="'Notifications'" :onClick="getNewNotifications">
       <component :is="notifications"></component>
     </dashboard-card>
   </div>
@@ -35,6 +35,9 @@ export default {
         max: this.maxTemp
       }
       this.$store.dispatch('setTempFilter', filterTemp)
+    },
+    getNewNotifications() {
+      this.$store.dispatch('getNewNotifications')
     }
   }
 }
