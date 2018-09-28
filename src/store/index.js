@@ -32,7 +32,7 @@ export default new Vuex.Store({
         date: '23 January 2018,  18:20',
         message: 'You subscription has expired…',
         button_content: 'TEST3',
-        button_icon: './img/arrow-green.600531f0.svg',
+        button_icon: './img/arrow-blue.600531f0.svg',
         color: 'blue'
       }
     ],
@@ -44,6 +44,9 @@ export default new Vuex.Store({
     },
     setLoading (state, payload) {
       state.loading = payload
+    },
+    setNewNotifications (state, payload) {
+      state.notificationsData = payload
     }
   },
   actions: {
@@ -64,9 +67,26 @@ export default new Vuex.Store({
           message: err
         }
       }
-    } 
-
-  },
+    },
+    
+    getNewNotifications ({commit, getters}) {
+      const last = getters.notificationsData.length;
+      const news = getters.notificationsData.slice(last - 2, last)
+      commit('setLoading', true)
+      const getData = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          commit('setNewNotifications', news)
+          resolve(true);
+        }, 2000);
+      })        
+      getData
+      .then(res => {
+        if(res){
+          commit('setLoading', false)
+        }
+      })      
+  }
+},
   getters: {
     tempData (state) {
       return state.tempData
