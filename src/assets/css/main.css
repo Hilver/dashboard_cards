@@ -17,3 +17,7 @@
     top: 12px;
     right: 12px;
 }
+
+div.notification__template:first-child > div:first-child {
+    display: none;
+}
