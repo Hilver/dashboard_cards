@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <dashboard-card :title="'Device Temperature'" :onClick="setFilterTemp">
+    <dashboard-card :title="'Device Temperature'" :onClick="setFilterTemp" :loading="tempChartLoader">
       <component :is="temp_chart"></component>
     </dashboard-card>
-    <dashboard-card :title="'Notifications'" :onClick="getNewNotifications">
+    <dashboard-card :title="'Notifications'" :onClick="getNewNotifications" :loading="notificationLoader">
       <component :is="notifications"></component>
     </dashboard-card>
   </div>
@@ -38,6 +38,14 @@ export default {
     },
     getNewNotifications() {
       this.$store.dispatch('getNewNotifications')
+    }
+  },
+  computed: {
+    notificationLoader () {
+      return this.$store.getters.loadingNotifications
+    },
+    tempChartLoader () {
+      return this.$store.getters.loadingTempChart
     }
   }
 }

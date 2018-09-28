@@ -36,14 +36,18 @@ export default new Vuex.Store({
         color: 'blue'
       }
     ],
-    loading: false
+    loadingTempChart: false,
+    loadingNotifications: false,
   },
   mutations: {
     setTempFilter (state, payload) {
       state.tempDataFilter = payload
     },
-    setLoading (state, payload) {
-      state.loading = payload
+    setLoadingTemp (state, payload) {
+      state.loadingTempChart = payload
+    },
+    setLoadingNotifications (state, payload) {
+      state.loadingNotifications = payload
     },
     setNewNotifications (state, payload) {
       state.notificationsData = payload
@@ -55,14 +59,14 @@ export default new Vuex.Store({
         min: payload.min,
         max: payload.max
       }
-      commit('setLoading', true)
+      commit('setLoadingTemp', true)
       try {
          await setTimeout(() => {
            commit('setTempFilter', params)
-           commit('setLoading', false)
+           commit('setLoadingTemp', false)
         }, 3000);         
       } catch (err) {
-        commit('setLoading', false)
+        commit('setLoadingTemp', false)
         return {
           message: err
         }
@@ -72,7 +76,7 @@ export default new Vuex.Store({
     getNewNotifications ({commit, getters}) {
       const last = getters.notificationsData.length;
       const news = getters.notificationsData.slice(last - 2, last)
-      commit('setLoading', true)
+      commit('setLoadingNotifications', true)
       const getData = new Promise((resolve, reject) => {
         setTimeout(() => {
           commit('setNewNotifications', news)
@@ -82,7 +86,7 @@ export default new Vuex.Store({
       getData
       .then(res => {
         if(res){
-          commit('setLoading', false)
+          commit('setLoadingNotifications', false)
         }
       })      
   }
@@ -97,8 +101,11 @@ export default new Vuex.Store({
         max: state.tempDataFilter.max
       }
     },
-    loading(state) {
-      return state.loading
+    loadingTempChart(state) {
+      return state.loadingTempChart
+    },
+    loadingNotifications(state) {
+      return state.loadingNotifications
     },
     notificationsData (state) {
       return state.notificationsData

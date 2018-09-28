@@ -9,14 +9,9 @@
     export default {
         props: {
             position: String,
-            onClick: Function
-        },
-        computed: {
-            loading () {                
-                return this.$store.getters.loading
-            }
+            onClick: Function,
+            loading: Boolean
         }
-        
     }
 </script>
 

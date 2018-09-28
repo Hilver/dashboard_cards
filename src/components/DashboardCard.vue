@@ -2,7 +2,7 @@
     <div class="card">
         <h3 class="card__title">{{title}}</h3>
         <div class="divider"></div>
-        <refresh-button :position="'dashboard-card__button--position'" :onClick="onClick"></refresh-button>
+        <refresh-button :position="'dashboard-card__button--position'" :loading="loading" :onClick="onClick"></refresh-button>
         <slot></slot>
     </div>
 </template>
@@ -16,6 +16,7 @@ import RefreshButton from './Buttons/RefreshButton.vue';
          props: {
              title: String,
              onClick: Function,
+             loading: Boolean
          }
     }
 </script>
