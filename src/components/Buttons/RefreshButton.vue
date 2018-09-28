@@ -1,5 +1,8 @@
-<template>    
-        <button :class="['oval--button', position]" @click="onClick"></button>    
+<template>
+    <div>  
+        <button v-if="!loading" :class="['oval--button', position]" @click="onClick"></button>
+        <img v-else :class="['loader', position]" src="https://i.pinimg.com/originals/79/29/49/792949593382cf91c67a503923cd1f88.gif">
+    </div>   
 </template>
 
 <script>
@@ -7,6 +10,11 @@
         props: {
             position: String,
             onClick: Function
+        },
+        computed: {
+            loading () {                
+                return this.$store.getters.loading
+            }
         }
         
     }
@@ -16,11 +24,18 @@
 
 .oval--button {
     background-color: #fff;
-    width: 20px;
-    height: 20px;
-    border: 3px solid $grey;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $grey;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
 }
 
 </style>
