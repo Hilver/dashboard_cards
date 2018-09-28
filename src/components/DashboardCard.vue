@@ -11,12 +11,12 @@
 import RefreshButton from './Buttons/RefreshButton.vue';
     export default {
         components: {
-            RefreshButton            
+            RefreshButton
         },
          props: {
              title: String,
              onClick: Function,
-         }        
+         }
     }
 </script>
 
