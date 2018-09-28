@@ -9,11 +9,15 @@ export default new Vuex.Store({
     tempDataFilter: {
       min: null,
       max: null
-    }
+    },
+    loading: false
   },
   mutations: {
     setTempFilter (state, payload) {
       state.tempDataFilter = payload
+    },
+    setLoading (state, payload) {
+      state.loading = payload
     }
   },
   actions: {
@@ -22,8 +26,12 @@ export default new Vuex.Store({
         min: payload.min,
         max: payload.max
       }
+      commit('setLoading', true)
       try {
-         await commit('setTempFilter', params)
+         await setTimeout(() => {
+           commit('setTempFilter', params)
+           commit('setLoading', false)
+        }, 3000);         
       } catch (err) {
         return {
           message: err
@@ -41,6 +49,9 @@ export default new Vuex.Store({
         min: state.tempDataFilter.min,
         max: state.tempDataFilter.max
       }
+    },
+    loading(state) {
+      return state.loading
     }
   }
 })
