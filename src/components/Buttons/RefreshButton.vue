@@ -1,13 +1,12 @@
-<template>
-    <div>
-        <button :class="['oval--button', position]"></button>
-    </div>
+<template>    
+        <button :class="['oval--button', position]" @click="onClick"></button>    
 </template>
 
 <script>
     export default {
         props: {
-            position: String
+            position: String,
+            onClick: Function
         }
         
     }
