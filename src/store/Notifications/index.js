@@ -6,7 +6,7 @@ export default {
         date: "22 minutes ago",
         message: 'We’ve just launched new update for your application',
         button_content: 'Restart Device',
-        button_icon: '/img/arrow-blue.1da589df.svg',
+        button_icon: 'http://peczkowskip.com/img/arrow-blue.svg',
         color: 'blue'
       },
       {
@@ -14,7 +14,7 @@ export default {
         date: '22 January 2018,  18:20',
         message: 'You subscription has expired…',
         button_content: 'Renew',
-        button_icon: '/img/arrow-green.600531f0.svg',
+        button_icon: 'http://peczkowskip.com/img/arrow-green.svg',
         color: 'green'
       },
       {
@@ -22,7 +22,7 @@ export default {
         date: '23 January 2018,  18:20',
         message: 'You subscription has expired…',
         button_content: 'TEST3',
-        button_icon: './img/arrow-blue.1da589df.svg',
+        button_icon: 'http://peczkowskip.com/img/arrow-blue.svg',
         color: 'blue'
       }
     ],    
