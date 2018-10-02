@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container full-height">
     <dashboard-card :title="'Device Temperature'" :onClick="setFilterTemp" :loading="tempChartLoader">
       <component :is="temp_chart"></component>
     </dashboard-card>
